@@ -21,15 +21,20 @@ namespace LinqExercise
              */
 
             //TODO: Print the Sum of numbers
-            numbers.Sum();
+            Console.WriteLine("Sum of: ");
+            Console.WriteLine(numbers.Sum());
             //TODO: Print the Average of numbers
-            numbers.Average();
+            Console.WriteLine("Average of: ");
+            Console.WriteLine( numbers.Average());
             //TODO: Order numbers in ascending order and print to the console
-            numbers.OrderBy(x => x);
-            //TODO: Order numbers in decsending order adn print to the console
-            numbers.OrderByDescending(x => x);
+            Console.WriteLine("Order by ascending: ");
+            numbers.OrderBy(x => x).ToList().ForEach(x => Console.WriteLine(x));
+            //TODO: Order numbers in decsending order adn print to the console\
+            Console.WriteLine("Order by descending: ");
+            numbers.OrderByDescending(x => x).ToList().ForEach(x => Console.WriteLine(x));
             //TODO: Print to the console only the numbers greater than 6
-            numbers.Where(x => x > 6);
+            Console.WriteLine("Numbers greater than 6");
+            numbers.Where(x => x > 6).ToList().ForEach(x => Console.WriteLine(x)); 
             //TODO: Order numbers in any order (acsending or desc) but only print 4 of them **foreach loop only!**
             numbers.OrderBy(x => x).Take(4).ToList().ForEach(Console.WriteLine);
             //TODO: Change the value at index 4 to your age, then print the numbers in decsending order
